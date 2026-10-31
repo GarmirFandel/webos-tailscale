@@ -2,6 +2,11 @@
 
 A shell script to install and update [Tailscale](https://tailscale.com/) on rooted LG webOS TVs (via [Homebrew Channel](https://www.webosbrew.org/)).
 
+## Requirements
+
+- A rooted LG webOS TV with Homebrew Channel installed ([rooting guide](https://www.webosbrew.org/guides/rooting/))
+- SSH access to the TV (enabled via Homebrew Channel settings)
+
 ## Usage
 
 Over SSH on the TV (requires root access and Homebrew Channel installed):
@@ -32,11 +37,6 @@ curl -sSL https://raw.githubusercontent.com/GarmirFandel/webos-tailscale/main/in
 5. Registers `tailscaled` as a Homebrew Channel init.d service, so it starts automatically on boot
 6. Sets up a bind-mount for `/etc/resolv.conf`, needed because `/etc/` is read-only on webOS
 7. Adds the install directory to `PATH` in `/home/root/.profile`
-
-## Requirements
-
-- A rooted LG webOS TV with Homebrew Channel installed ([rooting guide](https://www.webosbrew.org/guides/rooting/))
-- SSH access to the TV (enabled via Homebrew Channel settings)
 
 ## First-time setup
 
