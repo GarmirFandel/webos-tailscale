@@ -1,6 +1,7 @@
 # webOS Tailscale Installer
 
 A shell script to install and update [Tailscale](https://tailscale.com/) on rooted LG webOS TVs (via [Homebrew Channel](https://www.webosbrew.org/)).
+It is based on the @mariotaku's original script, but with a few modifications/upgrades, like TV architecture auto-detection and latest Tailscale version fetching.
 
 ## Requirements
 
@@ -9,13 +10,13 @@ A shell script to install and update [Tailscale](https://tailscale.com/) on root
 
 ## Usage
 
-Over SSH on the TV (requires root access and Homebrew Channel installed):
+Over SSH on the TV:
 
 ```sh
 curl -sSL https://raw.githubusercontent.com/GarmirFandel/webos-tailscale/main/install-tailscale.sh | sh
 ```
 
-This auto-detects both the device architecture and the latest stable Tailscale version, and asks for confirmation before installing.
+This auto-detects both the device architecture and the latest stable Tailscale version.
 
 You can also specify a version and/or architecture explicitly:
 
@@ -54,13 +55,18 @@ Open the printed login link on any other device's browser to complete authentica
 
 ## Updating
 
-Just re-run the same `curl | sh` command — it detects and stops any running `tailscaled` instance before overwriting the binaries. No need to re-authenticate: Tailscale's node state persists independently of the binaries.
+Just re-run the same `curl | sh` command you used for the installation.
+It detects and stops any running `tailscaled` instance before overwriting the binaries. No need to re-authenticate: Tailscale's node state persists independently of the binaries.
 
 ## Notes
 
 - Tested on webOS 6 (LG C1, arm64) and an older arm (32-bit) webOS model.
-- SSH on Homebrew-rooted webOS devices typically runs on port **9922**, not 22.
 - If `tailscale`/`tailscaled` aren't found right after install in an already-open SSH session, either run `export PATH=$PATH:/media/developer/bin` or reconnect — `.profile` is only read on new sessions.
+
+## Credits
+
+- @mariotaku
+- Claude Sonnet 5
 
 ## License
 
