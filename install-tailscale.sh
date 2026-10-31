@@ -48,7 +48,7 @@ if [ -z "$1" ]; then
     fi
 
     printf "Latest version found: %s (%s). Proceed? [y/N] " "$TAILSCALE_VERSION" "$TAILSCALE_ARCH"
-    read -r ANSWER
+    read -r ANSWER < /dev/tty
     case "$ANSWER" in
         y|Y|yes|Yes) ;;
         *) echo "Aborted."; exit 0 ;;
