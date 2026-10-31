@@ -1,7 +1,7 @@
 # webOS Tailscale Installer
 
 A shell script to install and update [Tailscale](https://tailscale.com/) on rooted LG webOS TVs (via [Homebrew Channel](https://www.webosbrew.org/)).
-It is based on the @mariotaku's original script, but with a few modifications/upgrades, like TV architecture auto-detection and latest Tailscale version fetching.
+It is based on  [@mariotaku](https://github.com/mariotaku)'s original script, but with a few modifications/upgrades, like TV architecture auto-detection and latest Tailscale version fetching.
 
 ## Requirements
 
@@ -65,7 +65,7 @@ It detects and stops any running `tailscaled` instance before overwriting the bi
 
 ## Credits
 
-- @mariotaku
+- [@mariotaku](https://github.com/mariotaku)
 - Claude Sonnet 5
 
 ## License
